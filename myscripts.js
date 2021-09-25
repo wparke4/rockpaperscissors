@@ -23,7 +23,7 @@ function validateUserChoice(userChoice) {
         validUserChoice = lowerCaseChoice;
     } else { 
         //if userChoice is not valid, throw error
-        console.log("error");
+        console.log("Please choose rock, paper, or scissors");
     }
     return validUserChoice;
 }
