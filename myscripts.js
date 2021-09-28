@@ -22,8 +22,7 @@ function validateUserChoice(userChoice) {
     if(lowerCaseChoice === "rock" || lowerCaseChoice === "paper" || lowerCaseChoice === "scissors") {
         validUserChoice = lowerCaseChoice;
     } else { 
-        //if userChoice is not valid, throw error
-        console.log("error");
+        validUserChoice = 'Please enter a valid option';
     }
     return validUserChoice;
 }
@@ -31,13 +30,14 @@ function validateUserChoice(userChoice) {
 
 
 function battle(userChoice) {
-    //call validateUserChoice function
-    let validUserChoice = validateUserChoice(userChoice);
     //define compChoice as the result of mentioned function
     let compChoice = compChoiceSelector();
     let result;
-    //if the choices are the same, it is a draw
-    if(validUserChoice === compChoice) {
+    //call validateUserChoice function
+    let validUserChoice = validateUserChoice(userChoice);
+    if(validUserChoice === 'Please enter a valid option') {
+        console.log(validUserChoice);
+    } else if(validUserChoice === compChoice) {
         result = "draw";
     } else if((validUserChoice === "rock" && compChoice === "paper") || (validUserChoice === "paper" && compChoice === "scissors") || (validUserChoice === "scissors" && compChoice === "rock")) {
         result = "You Lose! " + compChoice + " beats " + validUserChoice; 
