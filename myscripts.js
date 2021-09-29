@@ -1,3 +1,4 @@
+//computer choice is chosen randomly. function is called in battle function
 function compChoiceSelector() {
     //generate number between 0<=X<1
     let num = Math.random();
@@ -13,40 +14,56 @@ function compChoiceSelector() {
     return compChoice;
 }
 
+//grabbing the three images to add event listeners to them
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
-let body = document.querySelector("body");
 
+//hover event handlers below. adds the hovering class to element
+rock.addEventListener('mouseover', function() {
+    rock.classList.add("hovering");
+});
+
+paper.addEventListener('mouseover', function() {
+    paper.classList.add("hovering")
+});
+
+scissors.addEventListener('mouseover', function() {
+    scissors.classList.add("hovering")
+});
+
+//grabbing body in order to append its child and display the results
+let body = document.querySelector('body');
+//referencing footerContainer so I can insert div before it
+let footerContainer = document.querySelector('.footerContainer');
+
+
+//creates element, appends it to the body inserting before the footer, creates text using parameter of results of battle
+function createDiv(str) {
+    const div = document.createElement('div');
+    body.insertBefore(div, footerContainer);
+    div.classList.add('resultStyle');
+    div.textContent = str;
+}
+
+//click event handlers for rock paper scissors below. user makes choice by clicking on image
 rock.addEventListener('click', function() {
     let result = battle('rock');
-    console.log(result);
+    createDiv(result);
 }
 );
 
 paper.addEventListener('click', function() {
     let result = battle('paper');
-    console.log(result);
+    createDiv(result);
 }
 );
 
 scissors.addEventListener('click', function() {
     let result = battle('scissors');
-    console.log(result);
+    createDiv(result);
 }
 );
-
-rock.mouseover = function() {
-    console.log("hovering rock");
-}
-
-paper.mouseover = function() {
-    console.log("hovering paper");
-}
-
-scissors.mouseover = function() {
-    console.log("hovering scissors");
-}
 
 function battle(userChoice) {
     //define compChoice as the result of mentioned function
