@@ -13,37 +13,36 @@ function compChoiceSelector() {
     return compChoice;
 }
 
-//this function will validate whether userChoice is valid or not
-function validateUserChoice(userChoice) {
-    //ensure userChoice is valied i.e. rock paper or scissors
-    //if valid, defining validUserChoice to use for battle function
-    let lowerCaseChoice = userChoice.toLowerCase();
-    let validUserChoice;
-    if(lowerCaseChoice === "rock" || lowerCaseChoice === "paper" || lowerCaseChoice === "scissors") {
-        validUserChoice = lowerCaseChoice;
-    } else { 
-        //if userChoice is not valid, throw error
-        console.log("error");
-    }
-    return validUserChoice;
+let userChoseRock = document.querySelector("#rock");
+let userChosePaper = document.querySelector("#paper");
+let userChoseScissors = document.querySelector("#scissors");
+
+userChoseRock.onclick = function() {
+    let results = battle("rock");
+    console.log(results);
 }
 
+userChosePaper.onclick = function() {
+    let results = battle("paper");
+    console.log(results);
+}
 
+userChoseScissors.onclick = function() {
+    let results = battle("scissors");
+    console.log(results);
+}
 
 function battle(userChoice) {
-    //call validateUserChoice function
-    let validUserChoice = validateUserChoice(userChoice);
     //define compChoice as the result of mentioned function
     let compChoice = compChoiceSelector();
     let result;
     //if the choices are the same, it is a draw
-    if(validUserChoice === compChoice) {
+    if(userChoice === compChoice) {
         result = "draw";
-    } else if((validUserChoice === "rock" && compChoice === "paper") || (validUserChoice === "paper" && compChoice === "scissors") || (validUserChoice === "scissors" && compChoice === "rock")) {
-        result = "You Lose! " + compChoice + " beats " + validUserChoice; 
+    } else if((userChoice === "rock" && compChoice === "paper") || (userChoice === "paper" && compChoice === "scissors") || (userChoice === "scissors" && compChoice === "rock")) {
+        result = "You Lose! " + compChoice + " beats " + userChoice; 
     } else {
-        result = "You Win! " + validUserChoice + " beats " + compChoice;
+        result = "You Win! " + userChoice + " beats " + compChoice;
     }
     return result;
-    console.log(result);
 }
