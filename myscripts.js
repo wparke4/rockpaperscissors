@@ -13,23 +13,39 @@ function compChoiceSelector() {
     return compChoice;
 }
 
-let userChoseRock = document.querySelector("#rock");
-let userChosePaper = document.querySelector("#paper");
-let userChoseScissors = document.querySelector("#scissors");
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
+let body = document.querySelector("body");
 
-userChoseRock.onclick = function() {
-    let results = battle("rock");
-    console.log(results);
+rock.addEventListener('click', function() {
+    let result = battle('rock');
+    console.log(result);
+}
+);
+
+paper.addEventListener('click', function() {
+    let result = battle('paper');
+    console.log(result);
+}
+);
+
+scissors.addEventListener('click', function() {
+    let result = battle('scissors');
+    console.log(result);
+}
+);
+
+rock.mouseover = function() {
+    console.log("hovering rock");
 }
 
-userChosePaper.onclick = function() {
-    let results = battle("paper");
-    console.log(results);
+paper.mouseover = function() {
+    console.log("hovering paper");
 }
 
-userChoseScissors.onclick = function() {
-    let results = battle("scissors");
-    console.log(results);
+scissors.mouseover = function() {
+    console.log("hovering scissors");
 }
 
 function battle(userChoice) {
@@ -38,7 +54,7 @@ function battle(userChoice) {
     let result;
     //if the choices are the same, it is a draw
     if(userChoice === compChoice) {
-        result = "draw";
+        result = "draw, you both chose " + compChoice;
     } else if((userChoice === "rock" && compChoice === "paper") || (userChoice === "paper" && compChoice === "scissors") || (userChoice === "scissors" && compChoice === "rock")) {
         result = "You Lose! " + compChoice + " beats " + userChoice; 
     } else {
@@ -46,3 +62,5 @@ function battle(userChoice) {
     }
     return result;
 }
+
+
