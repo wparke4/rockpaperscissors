@@ -1,0 +1,33 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+  }
+
+body {
+    height: 100vh;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    text-align: center;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    gap: 40px;
+}
+
+.image {
+    height: 150px;
+    width: auto;
+    border-radius: 5px;
+}
+
+.footerContainer {
+    text-align: center;
