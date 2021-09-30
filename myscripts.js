@@ -14,21 +14,6 @@ function compChoiceSelector() {
     return compChoice;
 }
 
-<<<<<<< HEAD
-//this function will validate whether userChoice is valid or not
-function validateUserChoice(userChoice) {
-    //ensure userChoice is valied i.e. rock paper or scissors
-    //if valid, defining validUserChoice to use for battle function
-    let lowerCaseChoice = userChoice.toLowerCase();
-    let validUserChoice;
-    if(lowerCaseChoice === "rock" || lowerCaseChoice === "paper" || lowerCaseChoice === "scissors") {
-        validUserChoice = lowerCaseChoice;
-    } else { 
-        //if userChoice is not valid, throw error
-        console.log("Please choose rock, paper, or scissors");
-    }
-    return validUserChoice;
-=======
 //grabbing the three images to add event listeners to them
 let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
@@ -59,7 +44,6 @@ function createDiv(str) {
     body.insertBefore(div, footerContainer);
     div.classList.add('resultStyle');
     div.textContent = str;
->>>>>>> e45aaaa83e43e5bf72625340b6d21f997b0bb258
 }
 
 //click event handlers for rock paper scissors below. user makes choice by clicking on image
