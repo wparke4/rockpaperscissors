@@ -19,19 +19,6 @@ let rock = document.querySelector("#rock");
 let paper = document.querySelector("#paper");
 let scissors = document.querySelector("#scissors");
 
-//hover event handlers below. adds the hovering class to element
-rock.addEventListener('mouseover', function() {
-    rock.classList.add("hovering");
-});
-
-paper.addEventListener('mouseover', function() {
-    paper.classList.add("hovering")
-});
-
-scissors.addEventListener('mouseover', function() {
-    scissors.classList.add("hovering")
-});
-
 //grabbing body in order to append its child and display the results
 let body = document.querySelector('body');
 //referencing footerContainer so I can insert div before it
