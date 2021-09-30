@@ -51,11 +51,11 @@ function battle(userChoice) {
     let result;
     //if the choices are the same, it is a draw
     if(userChoice === compChoice) {
-        result = "draw, you both chose " + compChoice;
+        result = "Pergatory, you both chose " + compChoice;
     } else if((userChoice === "rock" && compChoice === "paper") || (userChoice === "paper" && compChoice === "scissors") || (userChoice === "scissors" && compChoice === "rock")) {
-        result = "You Lose! " + compChoice + " beats " + userChoice; 
+        result = "ETERNAL DAMNATION! " + compChoice + " beats " + userChoice; 
     } else {
-        result = "You Win! " + userChoice + " beats " + compChoice;
+        result = "Salvation! " + userChoice + " beats " + compChoice;
     }
     return result;
 }
