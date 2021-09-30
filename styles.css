@@ -33,7 +33,7 @@ body {
     transform: scale(1.1);
 }
 
-.resultStyle {
+.resultText {
     text-align: center;
     font-size: 32px;
     font-weight: 800;

@@ -23,32 +23,25 @@ let scissors = document.querySelector("#scissors");
 let body = document.querySelector('body');
 //referencing footerContainer so I can insert div before it
 let footerContainer = document.querySelector('.footerContainer');
-
-
-//creates element, appends it to the body inserting before the footer, creates text using parameter of results of battle
-function createDiv(str) {
-    const div = document.createElement('div');
-    body.insertBefore(div, footerContainer);
-    div.classList.add('resultStyle');
-    div.textContent = str;
-}
+//grabbing div class result text to display the results
+let resultText = document.querySelector('.resultText');
 
 //click event handlers for rock paper scissors below. user makes choice by clicking on image
 rock.addEventListener('click', function() {
     let result = battle('rock');
-    createDiv(result);
+    resultText.textContent = result
 }
 );
 
 paper.addEventListener('click', function() {
     let result = battle('paper');
-    createDiv(result);
+    resultText.textContent = result
 }
 );
 
 scissors.addEventListener('click', function() {
     let result = battle('scissors');
-    createDiv(result);
+    resultText.textContent = result
 }
 );
 
