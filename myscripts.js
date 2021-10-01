@@ -36,6 +36,8 @@ let compScore = document.querySelector('.compScore');
 let userScoreCount = 0;
 let compScoreCount = 0;
 
+let welcomeMessage = document.getElementById('welcomeMessage');
+
 //1. click event handlers for rock paper scissors below. user makes choice by clicking on image
 //2. score() and battle() then both called on passing the user choice as argument
 //3. resultText content is then changed to the result string of battle()
@@ -78,9 +80,15 @@ function battle(userChoice) {
 function userScoreCounter() {
     userScoreCount ++;
     userScore.innerHTML = userScoreCount;
+    if(userScoreCount === 5) {
+        welcomeMessage.textContent = 'Please exit through the gift shop';
+    }
 }
 
 function compScoreCounter () {
     compScoreCount ++;
     compScore.innerHTML = compScoreCount;
+    if(compScoreCount === 5) {
+        welcomeMessage.textContent = 'YOUR SOUL WILL NOW BURN IN HELL FOR ETERNITY';
+    }
 }
