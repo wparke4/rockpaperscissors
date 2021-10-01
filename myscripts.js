@@ -74,7 +74,6 @@ function battle(userChoice) {
     return result;
 }
 
-//
 function score(userChoice) {
     //define compChoice as the result of mentioned function
     let compChoice = compChoiceSelector();
@@ -90,4 +89,7 @@ function score(userChoice) {
     console.log(score);
 }
 
-function 
+function counter() {
+    compScore = compScore + 1;
+    console.log(compScore);
+}
