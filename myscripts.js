@@ -33,26 +33,25 @@ let resultText = document.querySelector('.resultText');
 //grabbing user and comp <p>
 let userScore = document.querySelector('.userScore');
 let compScore = document.querySelector('.compScore');
+let userScoreCount = 0;
+let compScoreCount = 0;
 
 //1. click event handlers for rock paper scissors below. user makes choice by clicking on image
 //2. score() and battle() then both called on passing the user choice as argument
 //3. resultText content is then changed to the result string of battle()
 rock.addEventListener('click', function() {
-    score('rock');
     let result = battle('rock');
     resultText.textContent = result
 }
 );
 
 paper.addEventListener('click', function() {
-    score('paper');
     let result = battle('paper');
     resultText.textContent = result
 }
 );
 
 scissors.addEventListener('click', function() {
-    score('scissors');
     let result = battle('scissors');
     resultText.textContent = result
 }
@@ -68,28 +67,20 @@ function battle(userChoice) {
         result = "Pergatory, you both chose " + compChoice;
     } else if((userChoice === "rock" && compChoice === "paper") || (userChoice === "paper" && compChoice === "scissors") || (userChoice === "scissors" && compChoice === "rock")) {
         result = "ETERNAL DAMNATION! " + compChoice + " beats " + userChoice; 
+        compScoreCounter();
     } else {
         result = "Salvation! " + userChoice + " beats " + compChoice;
+        userScoreCounter();
     }
     return result;
 }
 
-function score(userChoice) {
-    //define compChoice as the result of mentioned function
-    let compChoice = compChoiceSelector();
-    let score;
-    //if the choices are the same, it is a draw
-    if(userChoice === compChoice) {
-        score = "draw";
-    } else if((userChoice === "rock" && compChoice === "paper") || (userChoice === "paper" && compChoice === "scissors") || (userChoice === "scissors" && compChoice === "rock")) {
-        score = "compWon";
-    } else {
-        score = "userWon";
-    }
-    console.log(score);
+function userScoreCounter() {
+    userScoreCount ++;
+    userScore.innerHTML = userScoreCount;
 }
 
-function counter() {
-    compScore = compScore + 1;
-    console.log(compScore);
+function compScoreCounter () {
+    compScoreCount ++;
+    compScore.innerHTML = compScoreCount;
 }
